@@ -1,10 +1,12 @@
-Oladapo Oyelaja  
-02 September 2026
+**Author:** Oladapo Oyelaja  
+**Date:** 02 September 2026
 
 # A Declarative Interval-Scoped Notation System for Hybrid Continuous-Discrete Streams
 
 I have been programming since I was eight or nine, and over the years, I have become accustomed to thinking about problems not only in terms of whether a solution works, but also by the means of which it does. That distinction followed me into an AP Calculus BC class, where I found myself trying to rationalize the assignments placed in front of me. The reasoning and intentions behind the processes seemed reasonable, but the methods by which they were conveyed did not. “That works, but there’s surely a better way to convey this,” I thought to myself repeatedly.  
+
 Mathematical Notation and Programming Languages are identical ontological pursuits: they are man’s attempt to abstract the world around us. Stripped of their instruments and representations, both disciplines perform the same fundamental operation–standardizing the irreducible complexity of reality and distilling chaos into coherent, deterministic structures. Why, then, do two fields confronting the same fundamental problem–continuity, or rather, continuous change–arrive at such different solutions? Mathematics traditionally approaches the problem through increasingly sophisticated abstractions, extending algebra with limits, calculus and analysis to describe what cannot be captured by algebra alone. Computer science faces the inverse problem, attempting to represent a continuous world within inherently discrete computational machinery. One constructs abstractions capable of reasoning about continuity; the other approximates continuity through discrete representations.  
+
 Yet perhaps this divergence is itself a consequence of the notational formalisms through which we represent these phenomena. If both fields ultimately confront the same tension between continuous phenomena and discrete representation, perhaps there exists a lower-level notational framework from which both approaches can be derived. Such a framework would not only bridge mathematics and computer science, but potentially reveal their respective formalisms as different expressions of a deeper underlying structure.
 
 # I. Architecture and Primitives
@@ -26,8 +28,28 @@ The logical behavior of the proposed notation is governed by the following rules
 
 # II. Case Study: Ball Kinematics and State Transitions
 
-| velocity(xₜ, v) { 	\[xₜ ⇒ xₜ \+ ∞ₜ\] : v, } mass(xₜ, m) { 	\[xₜ ⇒ xₜ \+ ∞ₜ\] : m, } ball(xₜ) { 	\[xₜ ⇒ xₜ \+ 2ₜ\] : { 		velocity(xₜ, falling), 	}, 	\[xₜ \+ 2ₜ\] : { 		velocity(xₜ, stopped), 	}, 	\[xₜ \+ 2ₜ ⇒ xₜ \+ ∞ₜ\] : { 		velocity(xₜ, speed), 		mass(xₜ, empty), 	}, } |
-| :---- |
+<pre>
+velocity(xₜ, v) {
+	[xₜ ⇒ xₜ + ∞ₜ] : v,
+}
+
+mass(xₜ, m) {
+	[xₜ ⇒ xₜ + ∞ₜ] : m,
+}
+
+ball(xₜ) {
+	[xₜ ⇒ xₜ + 2ₜ] : {
+		velocity(xₜ, falling),
+	},
+	[xₜ + 2ₜ] : {
+		velocity(xₜ, stopped),
+	},
+	[xₜ + 2ₜ ⇒ xₜ + ∞ₜ] : {
+		velocity(xₜ, speed),
+		mass(xₜ, empty),
+	},
+}
+</pre>
 
 # III. Behavioral Breakdown and Evaluation Logic
 
@@ -56,8 +78,10 @@ As currently conceptualized, this declarative framework functions as an optimize
 
 # V. Conclusion
 
-Traditional, over-engineered mathematical notation frequently misapplies the law of abstraction within the human cognitive landscape. When a notation system prioritizes dense algebraic syntax over structural clarity, it fails to optimize for the processing constraints of the human mind. The resulting cognitive overhead manifests as literal runtime errors in the reader’s internal compiler–their brain–resulting in a pervasive state of cognitive perplexity.  
-The declarative, interval-scoped framework introduced in this paper offers a profound resolution by operating as a universal algebraic state machine. By unifying continuous mathematical trajectories with discrete state boundaries inside explicit, layout driven containers, the framework renders traditional conditional logic (if/then) completely obsolete. It treats logic not as a series of conditional gates, but as structural geography along a universal axis of progression.  
+Traditional, over-engineered mathematical notation frequently misapplies the law of abstraction within the human cognitive landscape. When a notation system prioritizes dense algebraic syntax over structural clarity, it fails to optimize for the processing constraints of the human mind. The resulting cognitive overhead manifests as literal runtime errors in the reader’s internal compiler–their brain–resulting in a pervasive state of cognitive perplexity.
+
+The declarative, interval-scoped framework introduced in this paper offers a profound resolution by operating as a universal algebraic state machine. By unifying continuous mathematical trajectories with discrete state boundaries inside explicit, layout driven containers, the framework renders traditional conditional logic (if/then) completely obsolete. It treats logic not as a series of conditional gates, but as structural geography along a universal axis of progression.
+
 Because this syntax abstracts state transition down to pure placement and chronological priority, its modeling capabilities are entirely domain-agnostic. Whether applied to the kinetic velocities of physics, the sequential execution of computer science architectures, or the shifting truth values of philosophical systems, the framework serves as a single, symmetrical source of truth for both machine computation and human intuition. By shifting the cognitive burden from active syntax parsing to immediate visual pattern recognition, this framework allows both the biological brain and the silicon processor to compile the complexities of a changing universe with minimal friction.
 
 # Acknowledgements & Conceptual Independence
